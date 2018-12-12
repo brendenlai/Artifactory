@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "pattern": "jenkins-examples/pipeline-examples/resources/ipmitool",
+      "target": "libs-snapshot-local"      
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 node {
     git url: 'https://github.com/brendenlai/Artifactory.git'
 	
+	sh "touch ipmitool"
+	sh "cp ipmitool jenkins-examples/pipeline-examples/resources"
     // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
     def server = Artifactory.server SERVER_ID
 
     // Read the upload spec which was downloaded from github.
-    def uploadSpec = readFile 'jenkins-examples/pipeline-examples/resources/props-upload.json'
+    def uploadSpec = readFile 'jenkins-examples/pipeline-examples/resources/ipmitool-upload.json'
     // Upload to Artifactory.
     def buildInfo1 = server.upload spec: uploadSpec
 
